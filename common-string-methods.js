@@ -1,23 +1,44 @@
-/*
-
-Practice Problem #1
+/*Practice Problem #1
 
 Activity 1: Searching Strings
 Write a program to:
 Check if the text "JavaScript" is in the string "Learning JavaScript is fun!" using includes.
 Find the position of the word "fun" in the string.
+*/
 
+let searchText = 'Learning JavaScript is fun!';
+console.log(searchText.includes('JavaScript'));
+console.log(searchText.indexOf('fun'));
+
+/*
 Activity 2: Transforming Strings
 Convert the string " CODE BOOTCAMP " to lowercase and remove all extra whitespace.
 Replace "BOOTCAMP" with "JavaScript" in the transformed string.
+*/
 
+let transformText = ' CODE BOOTCAMP ';
+let newTransformText = transformText.toLowerCase().trim();
+console.log(newTransformText.replace('bootcamp', 'JavaScript'));
+
+/*
 Activity 3: Breaking Apart a Sentence
 Split the sentence "Coding is fun and educational" into an array of words.
+*/
 
+let splitSentence = 'Coding is fun and educational';
+console.log(splitSentence.split(' '));
+
+/*
 Activity 4: Retrieving Substrings
 Retrieve the first character of "Bootcamp" using charAt.
 Extract the word "camp" from "Bootcamp" using slice.
+*/
 
+let word = 'Bootcamp';
+console.log(word.charAt(0));
+console.log(word.slice(word.indexOf('camp')));
+
+/*
 Advanced Challenge
 Write a program to process the following string:
 Customer: John Doe
@@ -26,9 +47,23 @@ Total: $20.50
 Extract the customer name.
 Split the order into an array of items.
 Convert the total price to uppercase (e.g., "TOTAL: $20.50").
+*/
 
+let receipt = `Customer: John Doe
+Order: Apple, Banana, Grape
+Total: $20.50`
+let receiptLines = receipt.split('\n');
+let customerName = receiptLines[0].split(': ')[1];
+let itemsBought = receiptLines[1].split(': ')[1].split(', ');
+let totalPrice = receiptLines[2].toUpperCase();
 
-Practice Problem #2
+let newReceipt = `Customer: ${customerName}
+Order: ${itemsBought}
+${totalPrice}`;
+
+console.log(newReceipt);
+
+/*Practice Problem #2
 
 Objective
 Practice using common string methods to manipulate and extract information from strings.
@@ -69,23 +104,23 @@ Complete the following tasks and assign the results to the specified variables. 
 let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
 
 // 1. Searching
-let hasJavaScript; // Your code here
-let codingPosition; // Your code here
-let startsWithWelcome; // Your code here
-let endsWithToday; // Your code here
+let hasJavaScript = inputString.includes('JavaScript'); // Your code here
+let codingPosition = inputString.indexOf('Coding'); // Your code here
+let startsWithWelcome = inputString.startsWith('Welcome'); // Your code here
+let endsWithToday = inputString.endsWith('today.'); // Your code here
 
 // 2. Transforming
-let lowercaseString; // Your code here
-let uppercaseString; // Your code here
-let trimmedString; // Your code here
-let replacedString; // Your code here
+let lowercaseString = inputString.toLocaleLowerCase(); // Your code here
+let uppercaseString = inputString.toUpperCase(); // Your code here
+let trimmedString = inputString.trim(); // Your code here
+let replacedString = trimmedString.replace('JavaScript', 'coding'); // Your code here
 
 // 3. Breaking Apart
-let wordsArray; // Your code here
+let wordsArray = trimmedString.split(' '); // Your code here
 
 // 4. Retrieving
-let firstCharacter; // Your code here
-let extractedBootcamp; // Your code here
+let firstCharacter = trimmedString.charAt(0); // Your code here
+let extractedBootcamp = inputString.slice(inputString.indexOf('Bootcamp'), inputString.indexOf('!')); // Your code here
 
 // Log all results
 console.log({
